@@ -1,56 +1,75 @@
-        /* Importa a fonte 'Inter' do Google Fonts para deixar o texto mais bonito */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+/* Importa a fonte 'Inter' do Google Fonts para deixar o texto mais bonito */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
 
-/* Estilo geral do corpo da página (versão corrigida e simplificada) */
+/* Estilo geral do corpo da página */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #E9E9E9;
     color: #333;
-    margin: 0; /* Remove a margem padrão do navegador */
+    margin: 0;
+    /* Remove a margem padrão do navegador */
 }
 
-        /* 2. ADICIONE ESTE NOVO BLOCO DE CÓDIGO */
-        /* Camada da imagem de fundo com transparência */
-        .background-layer {
-            /* Posição e tamanho */
-            position: fixed;
-            /* Fica fixo na tela, mesmo com rolagem */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+/* Camada da imagem de fundo com transparência */
+.background-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.2;
+    z-index: -1;
+}
 
-            /* Imagem e seus ajustes */
-            background-image: url('../img/background.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-
-            /* Efeito de transparência */
-            opacity: 0.2;
-            /* Ajuste entre 0.0 (invisível) e 1.0 (totalmente opaco) */
-
-            /* Garante que a imagem fique atrás de todo o conteúdo */
-            z-index: -1;
-        }
-
-/* --- Estilo do novo Cabeçalho com Gradiente --- */
+/* --- Estilo do Cabeçalho com Gradiente --- */
 .page-header {
     height: 50px;
     background: linear-gradient(to right, #FDEB71, #FFFFFF, #85FFBD);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-            /* --- Estilo da Logo no Cabeçalho --- */
-            .header-logo {
-                height: 55px;
-                /* Defina uma altura para a logo. Deve ser menor que a altura do header (55px) */
-                width: auto;
-                /* Mantém a proporção da imagem */
-            }
+/* --- Estilo da Logo no Cabeçalho --- */
+.header-logo {
+    height: 48px;
+    width: auto;
+}
+
+
+/* --- REGRAS DE LAYOUT EM COLUNAS --- */
+.layout-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que as colunas "quebrem" em telas menores */
+    justify-content: center;
+    align-items: flex-start;
+    /* Alinha as colunas pelo topo */
+    gap: 30px;
+    /* Espaço entre as colunas */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Centraliza o conjunto de colunas na página */
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    /* Itens dentro das colunas ficarão um embaixo do outro */
+    gap: 30px;
+    /* Espaço entre os cards dentro de uma mesma coluna */
+    flex: 1;
+    /* Faz com que cada coluna tente ocupar o mesmo espaço */
+    min-width: 300px;
+    /* Largura mínima para cada coluna antes de quebrar a linha */
+}
 
 
 /* Estilo do container principal (o card) */
@@ -59,184 +78,192 @@ body {
     padding: 20px;
     border-radius: 25px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 90%; /* Usar porcentagem ajuda na responsividade */
-    text-align: center;
-
-    /* --- CORREÇÃO FINAL DE CENTRALIZAÇÃO E ESPAÇAMENTO --- */
-    margin: 40px auto; /* 'auto' nas laterais centraliza o card horizontalmente */
-}
-
-            /* Estilo dos títulos */
-            h1 {
-                font-size: 28px;
-                font-weight: 800;
-                /* Texto bem forte (negrito) */
-                margin-bottom: 5px;
-            }
-
-            /* Estilo do subtítulo */
-            .subtitle {
-                font-size: 16px;
-                margin-bottom: 30px;
-                color: #666;
-            }
-
-            /* Estilo do grupo de input (label + campo de texto + ícone) */
-            .input-group {
-                margin-bottom: 20px;
-                text-align: left;
-                /* Alinha o texto da label à esquerda */
-            }
-
-            .input-group label {
-                display: block;
-                margin-bottom: 8px;
-                font-weight: bold;
-                font-size: 14px;
-            }
-
-            .input-wrapper {
-                position: relative;
-                /* Necessário para posicionar o ícone dentro do campo */
-            }
-
-            .input-wrapper .icon {
-                position: absolute;
-                /* Posição absoluta em relação ao wrapper */
-                left: 15px;
-                top: 50%;
-                transform: translateY(-50%);
-                /* Centraliza o ícone verticalmente */
-                width: 24px;
-                height: 24px;
-            }
-
-            /* Estilo dos campos de input (onde se digita o preço) */
-            .input-field {
-                width: 100%;
-                padding: 12px 12px 12px 50px;
-                /* Espaçamento interno para não sobrepor o ícone */
-                border: 1px solid #DDD;
-                border-radius: 8px;
-                font-size: 16px;
-                box-sizing: border-box;
-                /* Garante que o padding não aumente a largura total */
-            }
-
-            /* Estilo do botão de calcular */
-            .calculate-button {
-                width: 100%;
-                padding: 15px;
-                background-color: #007BFF;
-                /* Cor de fundo azul */
-                color: white;
-                /* Cor do texto */
-                border: none;
-                border-radius: 8px;
-                font-size: 16px;
-                font-weight: bold;
-                cursor: pointer;
-                /* Muda o cursor para uma "mãozinha" */
-                transition: background-color 0.3s;
-                /* Efeito suave na troca de cor */
-            }
-
-            .calculate-button:hover {
-                background-color: #0056b3;
-                /* Cor do botão ao passar o mouse */
-            }
-
-            /* Estilo da área de resultado (inicialmente escondida) */
-            .result-box {
-                margin-top: 25px;
-                padding: 20px;
-                border-radius: 8px;
-                display: none;
-                /* Começa escondido */
-            }
-
-            .result-box h2 {
-                margin: 0 0 10px 0;
-                font-size: 20px;
-            }
-
-            .result-box p {
-                margin: 0;
-                font-size: 14px;
-            }
-
-            /* Estilos específicos para o resultado (cores dinâmicas) */
-            .result-gasolina {
-                background-color: #0047d6;
-                /* Fundo azul claro */
-                color: #fcfcfc;
-                /* Texto azul escuro */
-            }
-
-            .result-alcool {
-                background-color: #48d254;
-                /* Fundo verde claro */
-                color: #ffffff;
-                /* Texto verde escuro */
-            }
-
-/* --- Estilo para a informação no rodapé da página --- */
-.footer-info {
     width: 100%;
-    max-width: 450px;
     text-align: center;
-
-    /* --- CORREÇÃO FINAL DE CENTRALIZAÇÃO E ESPAÇAMENTO --- */
-    margin: 20px auto 40px auto; /* Margens: 20px topo, auto laterais, 40px embaixo */
+    box-sizing: border-box;
 }
 
-/* Estilo da linha horizontal */
-.footer-info hr {
-    border: none; /* Remove o estilo padrão da linha */
-    height: 1px;  /* Deixa a linha bem fina */
-    background-color: #CCCCCC; /* Cor cinza claro para a linha */
-    margin-bottom: 10px; /* Espaço entre a linha e o texto abaixo */
+/* NOVOS ESTILOS PARA DIFERENCIAR OS CONTAINERS */
+.container-media {
+    background-color: rgba(255, 212, 212, 0.85); /* Um azul muito claro e suave */
 }
 
-/* Estilo do texto */
-.footer-info p {
-    font-size: bold 15px;
-    color: #090909;
-    text-shadow: 0px 1px 3px rgba(255, 255, 255, 0.7);
-    margin: 0; /* Remove a margem padrão do parágrafo */
+.container-oleo {
+    background-color: rgba(255, 249, 167, 0.85); /* Um laranja/pêssego muito claro e suave */
 }
+
+
+/* Estilo dos títulos */
+h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+h2 { /* Adicionado para os h2 dentro dos containers */
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+
+/* Estilo do subtítulo */
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Estilo do grupo de input (label + campo de texto + ícone) */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilo dos campos de input (onde se digita o preço) */
+.input-field {
+    width: 100%;
+    padding: 12px 12px 12px 50px;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Estilo do botão de calcular (padrão) */
+.calculate-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007BFF; /* Azul padrão */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calculate-button:hover {
+    background-color: #0056b3; /* Azul padrão mais escuro */
+}
+
+/* NOVOS ESTILOS PARA OS BOTÕES DIFERENCIADOS */
+.calculate-button-media {
+    background-color: #ca2020; /* Um azul/verde-água */
+}
+
+.calculate-button-media:hover {
+    background-color: #9b1717; /* Um azul/verde-água mais escuro */
+}
+
+.calculate-button-oleo {
+    background-color: #D68A00; /* Um laranja dourado */
+}
+
+.calculate-button-oleo:hover {
+    background-color: #A36900; /* Um laranja dourado mais escuro */
+}
+
+
+/* Estilo da área de resultado (inicialmente escondida) */
+.result-box {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+}
+
+/* Estilos específicos para o resultado (cores dinâmicas) */
+.result-gasolina {
+    background-color: #0047d6;
+    color: #fcfcfc;
+}
+
+.result-alcool {
+    background-color: #48d254;
+    color: #ffffff;
+}
+
+/* --- Estilos Finais para Mapa e Redes Sociais --- */
+#map-container {
+    overflow: hidden;
+    border-radius: 15px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+#map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
 
 /* --- Estilo do Rodapé de Copyright --- */
 .site-footer {
     width: 100%;
-    text-align: center; /* Centraliza o texto */
-    padding: 10px 0;   /* Adiciona um espaçamento interno */
-    margin-top: 110px;  /* Empurra o rodapé para o final da página em layouts flex */
-    font-size: 12px;   /* Texto pequeno */
-    color: #666;      /* Cor de texto cinza e discreta */
+    text-align: center;
+    padding: 10px 0 20px 0;
+    font-size: 12px;
+    color: #666;
 }
 
 .site-footer p {
-    margin: 0; /* Remove a margem padrão do parágrafo */
+    margin: 0;
 }
 
+/* Ajustes para telas menores */
+@media (max-width: 480px) {
+    .layout-wrapper {
+        padding: 10px;
+    }
 
-            /* Esta regra será aplicada em telas com largura máxima de 480px (tamanho comum de celulares) */
-            @media (max-width: 480px) {
-
-                /* Diminui o espaçamento nas laterais da página */
-                body {
-                    padding: 15px;
-                }
-
-                /* Diminui o espaçamento interno do card principal */
-                .container {
-                    padding: 20px;
-                }
-
-                /* Diminui o tamanho do título principal para caber melhor na tela */
-                h1 {
-                    font-size: 24px;
-                }
-            }
+    h1 {
+        font-size: 24px;
+    }
+}
