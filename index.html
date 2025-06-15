@@ -11,6 +11,13 @@
   
 </head>
 <body>
+
+<div class="background-layer"></div>
+
+<header class="page-header">  
+    <img src="img/icon.png" alt="Logo do Site" class="header-logo"/> 
+</header>
+
 <div class="container">
         <h1>Álcool ou Gasolina?</h1>
         <p class="subtitle">Descubra qual combustível vale mais a pena.</p>
@@ -18,8 +25,7 @@
         <div class="input-group">
             <label for="alcool">Preço do Litro do Álcool (R$)</label>
             <div class="input-wrapper">
-                 <!-- Ícone de folha para o Álcool -->
-                <img src="img/pump_transparent_1.png" class="icon" alt="Ícone de Álcool">
+                 <img src="img/pump_transparent_1.png" class="icon" alt="Ícone de Álcool">
                 <input class="input-field" type="number" id="alcool" placeholder="Insira o valor do álcool">
             </div>
         </div>
@@ -27,7 +33,6 @@
         <div class="input-group">
             <label for="gasolina">Preço do Litro da Gasolina (R$)</label>
             <div class="input-wrapper">
-                <!-- Ícone de bomba para a Gasolina -->
                 <img src="img/pump_transparent_2.png" class="icon" alt="Ícone de Gasolina">
                 <input class="input-field" type="number" id="gasolina" placeholder="Insira o valor da gasolina">
             </div>
@@ -35,9 +40,18 @@
 
         <button class="calculate-button" id="calculateBtn">CALCULAR A ECONOMIA</button>
         
-        <!-- Esta div está vazia e escondida. O JavaScript vai preenchê-la com o resultado. -->
         <div class="result-box" id="result"></div>
     </div>
+     <div class="footer-info">
+        <hr>
+        <p>
+            O cálculo considera que o rendimento do álcool deve ser no mínimo 70% do rendimento da gasolina.
+        </p>
+    </div>
+
+      <footer class="site-footer">
+      <p>&copy; 2025 LHR. Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>
