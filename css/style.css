@@ -12,7 +12,17 @@
             min-height: 100vh; /* Garante que o corpo ocupe a tela inteira */
             margin: 0;
             padding: 20px; /* Adiciona um espaçamento nas bordas */
+
+             /* --- TROQUE ESTA URL PELA SUA IMAGEM --- */
+            background-image: url('../img/background.png'); /* Exemplo: Um escudo/logo */
+
+            background-color: #E9E9E9; /* Cor de fundo que aparece caso a imagem falhe */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover; /* Faz a imagem cobrir toda a tela. Use 'contain' para mostrar a imagem inteira sem cortes. */
         }
+
+
 
         /* Estilo do container principal (o card) */
         .container {
@@ -120,4 +130,23 @@
         .result-alcool {
             background-color: #e8f5e9; /* Fundo verde claro */
             color: #1e4620; /* Texto verde escuro */
+        }
+
+        /* Esta regra será aplicada em telas com largura máxima de 480px (tamanho comum de celulares) */
+        @media (max-width: 480px) {
+            
+            /* Diminui o espaçamento nas laterais da página */
+            body {
+                padding: 15px;
+            }
+
+            /* Diminui o espaçamento interno do card principal */
+            .container {
+                padding: 20px;
+            }
+
+            /* Diminui o tamanho do título principal para caber melhor na tela */
+            h1 {
+                font-size: 24px;
+            }
         }
