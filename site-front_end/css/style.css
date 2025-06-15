@@ -1,0 +1,123 @@
+        /* Importa a fonte 'Inter' do Google Fonts para deixar o texto mais bonito */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+        /* Estilo geral do corpo da página */
+        body {
+            font-family: 'Inter', sans-serif; /* Define a fonte padrão */
+            background-color: #E9E9E9; /* Cor de fundo cinza claro, como no seu print */
+            color: #333; /* Cor do texto principal */
+            display: flex; /* Centraliza o conteúdo na tela */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Garante que o corpo ocupe a tela inteira */
+            margin: 0;
+            padding: 20px; /* Adiciona um espaçamento nas bordas */
+        }
+
+        /* Estilo do container principal (o card) */
+        .container {
+            background-color: #F8F8F8; /* Cor de fundo do card */
+            padding: 30px;
+            border-radius: 20px; /* Bordas arredondadas */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            max-width: 400px; /* Largura máxima do card */
+            width: 100%;
+            text-align: center; /* Centraliza todo o texto dentro do card */
+        }
+
+        /* Estilo dos títulos */
+        h1 {
+            font-size: 28px;
+            font-weight: 800; /* Texto bem forte (negrito) */
+            margin-bottom: 5px;
+        }
+
+        /* Estilo do subtítulo */
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        /* Estilo do grupo de input (label + campo de texto + ícone) */
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left; /* Alinha o texto da label à esquerda */
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .input-wrapper {
+            position: relative; /* Necessário para posicionar o ícone dentro do campo */
+        }
+        
+        .input-wrapper .icon {
+            position: absolute; /* Posição absoluta em relação ao wrapper */
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%); /* Centraliza o ícone verticalmente */
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Estilo dos campos de input (onde se digita o preço) */
+        .input-field {
+            width: 100%;
+            padding: 12px 12px 12px 50px; /* Espaçamento interno para não sobrepor o ícone */
+            border: 1px solid #DDD;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+        }
+        
+        /* Estilo do botão de calcular */
+        .calculate-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF; /* Cor de fundo azul */
+            color: white; /* Cor do texto */
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer; /* Muda o cursor para uma "mãozinha" */
+            transition: background-color 0.3s; /* Efeito suave na troca de cor */
+        }
+
+        .calculate-button:hover {
+            background-color: #0056b3; /* Cor do botão ao passar o mouse */
+        }
+
+        /* Estilo da área de resultado (inicialmente escondida) */
+        .result-box {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            display: none; /* Começa escondido */
+        }
+
+        .result-box h2 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+        }
+
+        .result-box p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Estilos específicos para o resultado (cores dinâmicas) */
+        .result-gasolina {
+            background-color: #e7f3ff; /* Fundo azul claro */
+            color: #004085; /* Texto azul escuro */
+        }
+        
+        .result-alcool {
+            background-color: #e8f5e9; /* Fundo verde claro */
+            color: #1e4620; /* Texto verde escuro */
+        }

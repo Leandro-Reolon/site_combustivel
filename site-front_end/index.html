@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+
+  <title>Calculo de Combustivel</title>
+  
+</head>
+<body>
+<div class="container">
+        <h1>Álcool ou Gasolina?</h1>
+        <p class="subtitle">Descubra qual combustível vale mais a pena.</p>
+
+        <div class="input-group">
+            <label for="alcool">Preço do Litro do Álcool (R$)</label>
+            <div class="input-wrapper">
+                 <!-- Ícone de folha para o Álcool -->
+                <img src="https://image.flaticon.com/icons/png/512/2930/2930259.png" class="icon" alt="Ícone de Álcool">
+                <input class="input-field" type="number" id="alcool" placeholder="Insira o valor do álcool">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="gasolina">Preço do Litro da Gasolina (R$)</label>
+            <div class="input-wrapper">
+                <!-- Ícone de bomba para a Gasolina -->
+                <img src="https://image.flaticon.com/icons/png/512/641/641979.png" class="icon" alt="Ícone de Gasolina">
+                <input class="input-field" type="number" id="gasolina" placeholder="Insira o valor da gasolina">
+            </div>
+        </div>
+
+        <button class="calculate-button" id="calculateBtn">CALCULAR A ECONOMIA</button>
+        
+        <!-- Esta div está vazia e escondida. O JavaScript vai preenchê-la com o resultado. -->
+        <div class="result-box" id="result"></div>
+    </div>
+
+</body>
+</html>
